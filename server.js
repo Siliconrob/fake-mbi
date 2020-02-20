@@ -1,8 +1,7 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 
-
-app.get('/echo/:what', (req, res) => {
+app.get("/echo/:what", (req, res) => {
   res.json({
     hostname: req.hostname,
     query: req.query,
