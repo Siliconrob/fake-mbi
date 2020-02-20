@@ -4,31 +4,58 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Hello HTML</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
 	<body>
-		<h1>Fake Medeicare Beneficiary Identifier</h1>
-		<p>Please only input fake data into this</p>
+		<h1>Fake Medicare Beneficiary Identifier</h1>
     <div class="container">
-      <div class="row w-100">
-        <div class="col-sm">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>
+            <b>Only put fake data in this please</b>
+          </p>
+        </div>        
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
           <label>First Name:</label>
         </div>
-        <div class="col-sm">
-          <input type="text" name="firstName" value=""><br>          
+        <div class="col-sm-3">
+          <input type="text" name="firstName" value="">
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label>Last Name:</label>
+        </div>
+        <div class="col-sm-3">
+          <input type="text" name="lastName" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label>Date of Birth:</label>
+        </div>
+        <div class="col-sm-3">
+          <input type="date" name="dateOfBirth" value="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <label>Social Security Number:</label>
+        </div>
+        <div class="col-sm-3">
+          <input type="text" name="ssn" value="">
+        </div>
+      </div>      
     </div>
-    
-      <div>
-        <div>
-        </div>
-      </div>
-      <label>Date Of Birth :</label>
-      <input type="date" name="dateOfBirth" value=""><br>
-      <label>Social Security Number:</label>
-      <input type="text" name="ssn" value=""><br>
-      <br>    
+  <script>
+    $(document).ready(function() {
+      $('#meetingForm').bootstrapValidator();
+    });
+  </script>  
+
 	</body>
 
 </html>
