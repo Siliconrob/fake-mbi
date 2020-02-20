@@ -1,10 +1,16 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+  extended: true
+})); 
 
 app.post("/echo", (req, res) => {
   res.json({
     hostname: req.hostname,
     query: req.query,
+    body: req.body,
     params: req.params
   });
 });
