@@ -13,34 +13,31 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="validationCustom01">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+      <input type="text" class="form-control" id="firstName" value="" required>
+      <div class="invalid-feedback">
+        First Name required
+      </div>      
     </div>
     <div class="col-md-4 mb-3">
       <label for="validationCustom02">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-      <div class="valid-feedback">
-        Looks good!
-      </div>
+      <input type="text" class="form-control" id="lastName" value="" required>
+      <div class="invalid-feedback">
+        Last Name required
+      </div>            
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationCustomUsername">Username</label>
+      <label for="validationCustomUsername">Date of Birth</label>
       <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-        </div>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+        <input type="date" class="form-control" id="dateOfBirth" aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
-          Please choose a username.
+          Date of Birth Required.
         </div>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
-      <label for="validationCustom03">City</label>
+      <label for="validationCustom03">Soc</label>
       <input type="text" class="form-control" id="validationCustom03" required>
       <div class="invalid-feedback">
         Please provide a valid city.
