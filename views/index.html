@@ -5,11 +5,12 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<title>Hello HTML</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="public/sender.js"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	</head>
 	<body>
 		<h1>Fake Medicare Beneficiary Identifier</h1>
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" action="/echo" novalidate>
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="firstName">First name</label>
@@ -52,30 +53,5 @@
       </div>
       <button class="btn btn-primary" type="submit">Lookup</button>
     </form>
-  <script>
-  // Example starter JavaScript for disabling form submissions if there are invalid fields
-  (function() {
-    'use strict';
-    window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
-      var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
-      var validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-          if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-          
-          fetch()
-          
-        }, false);
-      });
-    }, false);
-  })();
-  </script>
-
 	</body>
-
 </html>
