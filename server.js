@@ -20,14 +20,20 @@ app.post("/echo", (req, res) => {
   });
 });
 
-app.get("/fakeData", (req, res) => {
-  let fakeName = faker.name;
+app.get("/fakes", (req, res) => {
+  const fakeName = faker.name;
+
+  const max = 120;
+  const min = 60;
+  const randomYears = Math.floor(Math.random() * (max - min + 1)) + min;
+
   res.json({
-    firstName: fakeName.firstName,
-    lastName: fakeName.lastName,
-    dob: faker.date.past(10)
+    firstName: fakeName.firstName(),
+    lastName: fakeName.lastName(),
+    dob: faker.date.past(randomYears)
   });
 });
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
