@@ -8,12 +8,6 @@ function randomSSN () {
 
 function randomDOB () {
   
-  const max = 120;
-  const min = 60;
-  const years = Math.floor(Math.random() * (max - min + 1)) + min;
-  
-  let randomDate = new Date(+(new Date()) - Math.floor(Math.random()*10000000000));
-  randomDate.setYear(randomDate.getYear() - years);  
   return randomDate;
 }
 
