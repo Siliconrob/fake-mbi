@@ -7,11 +7,23 @@ function randomSSN () {
 }
 
 function randomDOB () {
-  new Date(+(new Date()) - Math.floor(Math.random()*10000000000))
+  
+  const max = 120;
+  const min = 60;
+  const years = Math.floor(Math.random() * (max - min + 1)) + min;
+  
+  new Date()
+  
+  return new Date(+(new Date()) - Math.floor(Math.random()*10000000000));
 }
 
 $(document).ready(() => {
   console.log("hello world :o");
+  
+  const dob = randomDOB();
+  const formattedDate = dob.toISOString().split('T')[0]
+  $("#dateOfBirth").val(formattedDate);
+  
   const ssn = randomSSN();
   $("#ssn").val(ssn);
 });
