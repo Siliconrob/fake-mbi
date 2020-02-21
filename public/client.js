@@ -6,17 +6,12 @@ function randomSSN () {
   return ssn.join('');
 }
 
-function randomDOB () {
-  
-  return randomDate;
-}
-
 $(document).ready(() => {
   console.log("hello world :o");
   
-  const dob = randomDOB();
-  const formattedDate = dob.toISOString().split('T')[0]
-  $("#dateOfBirth").val(formattedDate);
+  //const dob = randomDOB();
+  //const formattedDate = dob.toISOString().split('T')[0]
+  //$("#dateOfBirth").val(formattedDate);
   
   const ssn = randomSSN();
   $("#ssn").val(ssn);
