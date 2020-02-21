@@ -12,9 +12,9 @@ function randomDOB () {
   const min = 60;
   const years = Math.floor(Math.random() * (max - min + 1)) + min;
   
-  new Date()
-  
-  return new Date(+(new Date()) - Math.floor(Math.random()*10000000000));
+  let randomDate = new Date(+(new Date()) - Math.floor(Math.random()*10000000000));
+  randomDate.setYear(randomDate.getYear() - years);  
+  return randomDate;
 }
 
 $(document).ready(() => {
