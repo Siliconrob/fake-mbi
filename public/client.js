@@ -6,6 +6,18 @@ function randomSSN () {
   return ssn.join('');
 }
 
+function randomInitial() {
+  const alpha = [..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"]; 
+  return alpha[Math.random() * alpha.length|0];  
+}
+
+function randomName(baseText) {
+  
+  const random6digits = Math.floor(100000 + Math.random() * 900000);
+  return `${baseText}${random6digits}`
+  
+}
+
 function mbi() {
   const alpha = [..."ACDEFGHJKMNPQRTUVWXY"]; 
   const alphaNumeric = [..."ACDEFGHJKMNPQRTUVWXY0123456789"]; 
@@ -42,8 +54,9 @@ function mbi() {
 }
 
 function btnClick() {
-  //alert(mbi());  
-  $('#target').toggle();
+  $('#mbiLabel').text(mbi());
+  $("#firstName").val(randomInitial());
+  $("#ssn").val(randomSSN());
   return false;
 }
 
@@ -53,7 +66,7 @@ $(document).ready(() => {
   //const dob = randomDOB();
   //const formattedDate = dob.toISOString().split('T')[0]
   //$("#dateOfBirth").val(formattedDate);
+  $("#firstName").val(randomInitial());
+  $("#ssn").val(randomSSN());
   
-  const ssn = randomSSN();
-  $("#ssn").val(ssn);
 });
