@@ -12,10 +12,15 @@ function randomInitial() {
 }
 
 function randomName(baseText) {
-  
   const random6digits = Math.floor(100000 + Math.random() * 900000);
-  return `${baseText}${random6digits}`
-  
+  return `${baseText}${random6digits}`;  
+}
+
+function randomDateOfBirth() {
+  const randomNumber = Math.floor(1 + Math.random() * 40);
+  const newDate = new Date(+(new Date()) - Math.floor(Math.random()*10000000000));  
+  newDate.setFullYear(newDate.getFullYear() - (65 + randomNumber));
+  return newDate;  
 }
 
 function mbi() {
@@ -56,17 +61,17 @@ function mbi() {
 function btnClick() {
   $('#mbiLabel').text(mbi());
   $("#firstName").val(randomInitial());
+  $("#lastName").val(randomName('LastName'));
+  $("#dateOfBirth").val(randomDateOfBirth());
   $("#ssn").val(randomSSN());
   return false;
 }
 
 $(document).ready(() => {
   console.log("hello world :o");
-  
-  //const dob = randomDOB();
-  //const formattedDate = dob.toISOString().split('T')[0]
-  //$("#dateOfBirth").val(formattedDate);
+  $("#dateOfBirth").val(randomDateOfBirth());
   $("#firstName").val(randomInitial());
+  $("#lastName").val(randomName('LastName'));
   $("#ssn").val(randomSSN());
   
 });
