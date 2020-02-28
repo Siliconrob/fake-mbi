@@ -6,6 +6,47 @@ function randomSSN () {
   return ssn.join('');
 }
 
+function mbi() {
+  const alpha = [..."ACDEFGHJKMNPQRTUVWXY"]; 
+  const alphaNumeric = [..."ACDEFGHJKMNPQRTUVWXY0123456789"]; 
+  const numeric19 = [..."123456789"];
+  const numeric = [..."0123456789"];
+
+  /*
+  Position 1 – numeric values 1 thru 9
+  Position 2 – alphabetic values A thru Z (minus S, L, O, I, B, Z)
+  Position 3 – alpha-numeric values 0 thru 9 and A thru Z (minus S, L, O, I, B, Z) Position 4 – numeric values 0 thru 9
+  Position 5 – alphabetic values A thru Z (minus S, L, O, I, B, Z)
+  Position 6 – alpha-numeric values 0 thru 9 and A thru Z (minus S, L, O, I, B, Z) Position 7 – numeric values 0 thru 9
+  Position 8 – alphabetic values A thru Z (minus S, L, O, I, B, Z)
+  Position 9 – alphabetic values A thru Z (minus S, L, O, I, B, Z)
+  Position 10 – numeric values 0 thru 9
+  Position 11 – numeric values 0 thru 9
+  */
+
+  const mbi = [
+    numeric19[Math.random() * numeric19.length|0],
+    alpha[Math.random() * alpha.length|0],
+    alphaNumeric[Math.random() * alphaNumeric.length|0],
+    numeric[Math.random() * numeric.length|0],
+    alpha[Math.random() * alpha.length|0],
+    alphaNumeric[Math.random() * alphaNumeric.length|0],
+    numeric[Math.random() * numeric.length|0],
+    alpha[Math.random() * alpha.length|0],
+    alpha[Math.random() * alpha.length|0],
+    numeric[Math.random() * numeric.length|0],
+    numeric[Math.random() * numeric.length|0]
+  ];
+  
+  return mbi.join('');
+}
+
+function btnClick() {
+  //alert(mbi());  
+  $('#target').toggle();
+  return false;
+}
+
 $(document).ready(() => {
   console.log("hello world :o");
   
